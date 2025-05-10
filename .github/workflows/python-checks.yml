@@ -1,0 +1,27 @@
+name: python checks
+
+on:
+  push:
+    branches: [ "main" ]  
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3  
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Install Linters
+        run: pip install flake8 pylint
+
+      - name: Flake8 (Organização)
+        run: flake8 --exclude=venv,.github --max-line-length=120 --ignore=E501,W503 .
+
+      - name: Pylint (Erros Críticos)
+        run: pylint --disable=all --enable=F,E0401,E0611,E1136 engine/ app.py
