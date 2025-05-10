@@ -1,0 +1,23 @@
+name: Compile Check
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  check-compilation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2  
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up do Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Verificar Se Compila
+        run: |
+          python -m py_compile engine/*.py app.py 
+          echo "✅ Compilação bem-sucedida!"
