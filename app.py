@@ -3,8 +3,8 @@ import collections.abc
 collections.Mapping = collections.abc.Mapping
 import streamlit as st
 from engine.rules import PetAdvisor
-from engine.facts import UserPreferences
 from engine.facts import Animal
+from engine.facts import UserPreferences
 
 # Configuração da página
 st.set_page_config(page_title="Pet Recommender", page_icon="🐾")
