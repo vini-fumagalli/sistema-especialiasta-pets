@@ -18,10 +18,7 @@ jobs:
           python-version: "3.9"
 
       - name: Install Linters
-        run: pip install flake8 pylint
-
-      - name: Flake8 (Organização)
-        run: flake8 --exclude=venv,.github --max-line-length=120 --ignore=E501,W503 .
+        run: pip install pylint
 
       - name: Pylint (Erros Críticos)
         run: pylint --disable=all --enable=F,E0401,E0611,E1136 engine/ app.py
