@@ -1,0 +1,16 @@
+[
+    {
+        "nome": "cachorro",
+        "espaco": "medio",
+        "custo": "medio",
+        "energia": "alta",
+        "afeto": "alto"
+    },
+    {
+        "nome": "gato",
+        "espaco": "pequeno",
+        "custo": "baixo",
+        "energia": "baixa",
+        "afeto": "medio"
+    }
+]
